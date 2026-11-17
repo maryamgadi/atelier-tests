@@ -17,8 +17,8 @@ test('envoie un e-mail de confirmation et retourne le montant', async () => {
   expect(mailer.envoyer).toHaveBeenCalledTimes(1);
   expect(mailer.envoyer).toHaveBeenCalledWith('client@test.fr', expect.stringContaining('25'));
 });
- 
+
 test("refuse un panier vide et n'envoie aucun e-mail", async () => {
-  await expect(validerCommande([], 'client@test.fr')).rejects.toThrow('Panier vide');
-  expect(mailer.envoyer).not.toHaveBeenCalled();
-});
+    await expect(validerCommande([], 'client@test.fr')).rejects.toThrow('Panier vide');
+    expect(mailer.envoyer).not.toHaveBeenCalled();
+}); 
